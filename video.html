@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الفيديوهات</title>
+    <style>
+        /* 1. إعدادات عامة */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f0f0f;
+            color: #ffffff;
+            padding: 20px;
+        }
+
+        /* 2. الهيدر (رأس الصفحة) */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            border-bottom: 1px solid #272727;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            color: #ff0000;
+        }
+
+        /* 3. شبكة عرض الفيديوهات */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 4. كرت الفيديو */
+        .video-card {
+            background-color: #1f1f1f;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        /* إعدادات الاستجابة لفيديوهات يوتيوب (نسبة 16:9) */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* نسبة العرض للارتفاع 16:9 */
+            height: 0;
+            background-color: #000;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* تفاصيل الفيديو */
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .video-desc {
+            font-size: 0.85rem;
+            color: #aaa;
+            line-height: 1.5;
+        }
+
+        /* 5. التصميم على الشاشات الصغيرة */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>منصة الفيديوهات</h1>
+    </header>
+
+    <main class="video-grid">
+
+        <!-- الفيديو الخاص بك (YouTube) -->
+        <article class="video-card">
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/CGXG_E5g7cc?si=8nsQYBkwCJP09p2_" 
+                        title="YouTube video player" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="video-info">
+                <h2 class="video-title">اهداء الي د السيد بدوي</h2>
+                <p class="video-desc"></p>
+            </div>
+        </article>
+
+        <!-- فيديو آخر للعرض (يمكنك تكراره) -->
+        <article class="video-card">
+            <div class="video-container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/7IG8av8XaT4?si=GuNAB5SDfLXvs25P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h2 class="video-title">سوبر ماركت الريناد</h2>
+                <p class="video-desc"></p>
+            </div>
+        </article>
+       <!-- فيديو آخر للعرض (يمكنك تكراره) -->
+        <article class="video-card">
+            <div class="video-container">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/Sxv_bbRDGTE?si=5M2yN9aJ47DWoaLN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h2 class="video-title">سوبر ماركت الريناد</h2>
+                <p class="video-desc"></p>
+            </div>
+        </article>
+               <!-- فيديو آخر للعرض (يمكنك تكراره) -->
+        <article class="video-card">
+            <div class="video-container">
+               <iframe width="560" height="315" src="https://www.youtube.com/embed/Sxv_bbRDGTE?si=5M2yN9aJ47DWoaLN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="video-info">
+                <h2 class="video-title">سوبر ماركت الريناد</h2>
+                <p class="video-desc"></p>
+            </div>
+        </article>
+    </main>
+
+</body>
+</html>
